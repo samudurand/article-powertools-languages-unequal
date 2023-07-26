@@ -20,7 +20,11 @@
     "typescript": "~5.1.3"
   },
   "dependencies": {
+    "@aws-lambda-powertools/idempotency": "^1.12.1-beta",
+    "@aws-lambda-powertools/logger": "^1.12.1",
+    "@middy/core": "^3.6.2",
     "aws-cdk-lib": "2.87.0",
+    "aws-lambda": "^1.0.7",
     "constructs": "^10.0.0",
     "source-map-support": "^0.5.21"
   }

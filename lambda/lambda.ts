@@ -28,18 +28,15 @@ export async function handler(event: RequestEvent): Promise<Response> {
     // Use the ISO string as the key for the S3 object
     const params = {
       Bucket: bucketName,
-      Key: `${isoStringDate}.txt`,
+      Key: `plain-${isoStringDate}.txt`,
       Body: message,
     };
 
     await s3.putObject(params).promise();
 
-    // Print file uploaded successfully with the content of the message
-    console.log(`File uploaded successfully with content: '${message}'`);
-
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: 'File uploaded successfully!' }),
+      body: JSON.stringify({ message: `File uploaded successfully with content: '${message}'` }),
     };
   } catch (error: any) {
     return {
